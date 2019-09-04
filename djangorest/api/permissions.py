@@ -7,6 +7,6 @@ class IsOwner(BasePermission):
     """Base permission class to allow only bucketlist owners to edit them"""
     def has_object_permission(self, request, view, obj):
         """Return true if permission is granted to the bucketlist owner"""
-        if isinstance(obj, Bucketlist):
+        if isinstance(obj, BucketList):
             return obj.owner == request.owner
         return obj.owner == request.user
